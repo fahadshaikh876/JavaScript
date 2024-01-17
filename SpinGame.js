@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-
+// withthehelpof-techwithtim
 const SYMBOL_COUNT = {
     A: 2,
     B: 4,
@@ -102,8 +102,8 @@ const win = (rows, bet, lines) => {
     let winamount = 0;
 
     for (let i = 0; i < lines; i++) {
-        sym = rows[i];
-        won = true;
+        const sym = rows[i];
+        let won = true;
 
         for (const symb of sym) {
             if (symb != sym[0]) {
@@ -131,8 +131,7 @@ const main = () => {
             let reelss = Spin();
             let trans = transpose(reelss);
             let picc = printrows(trans)
-            // console.log(picc);
-            let winn = win(reelss, bet, lines);
+            let winn = win(trans, bet, lines);
             console.log('You won: $' + winn);
 
             depositss += winn;
